@@ -100,9 +100,15 @@ export const studentSchema = z.object({
   mobileNumber: z.string().regex(/^\+\d{10,15}$/),
   bloodGroup: z.enum(["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"]),
 });
-type StudentType = z.infer<typeof studentSchema>;
-type StaffType = z.infer<typeof staffSchema>;
-type CreatePaymentType = z.infer<typeof createPaymentSchema>;
-type FeeStructureType = z.infer<typeof feeStructureSchema>;
-type StudentFeeType = z.infer<typeof studentFeeSchema>;
-type ExpenseFormType = z.infer<typeof expenseSchema>;
+export const adminSignupInput = z.object({
+  name: z.string().optional(),
+  email: z.string(),
+  password: z.string(),
+});
+export type AdminSignupInput = z.infer<typeof adminSignupInput>;
+export type StudentType = z.infer<typeof studentSchema>;
+export type StaffType = z.infer<typeof staffSchema>;
+export type CreatePaymentType = z.infer<typeof createPaymentSchema>;
+export type FeeStructureType = z.infer<typeof feeStructureSchema>;
+export type StudentFeeType = z.infer<typeof studentFeeSchema>;
+export type ExpenseFormType = z.infer<typeof expenseSchema>;

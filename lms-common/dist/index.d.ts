@@ -164,3 +164,23 @@ export declare const studentSchema: z.ZodObject<{
     bloodGroup: "A+" | "A-" | "B+" | "B-" | "O+" | "O-" | "AB+" | "AB-";
     profilePic?: string | undefined;
 }>;
+export declare const adminSignupInput: z.ZodObject<{
+    name: z.ZodOptional<z.ZodString>;
+    email: z.ZodString;
+    password: z.ZodString;
+}, "strip", z.ZodTypeAny, {
+    email: string;
+    password: string;
+    name?: string | undefined;
+}, {
+    email: string;
+    password: string;
+    name?: string | undefined;
+}>;
+export type AdminSignupInput = z.infer<typeof adminSignupInput>;
+export type StudentType = z.infer<typeof studentSchema>;
+export type StaffType = z.infer<typeof staffSchema>;
+export type CreatePaymentType = z.infer<typeof createPaymentSchema>;
+export type FeeStructureType = z.infer<typeof feeStructureSchema>;
+export type StudentFeeType = z.infer<typeof studentFeeSchema>;
+export type ExpenseFormType = z.infer<typeof expenseSchema>;

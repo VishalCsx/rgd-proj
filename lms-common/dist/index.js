@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.studentSchema = exports.staffSchema = exports.Gender = exports.createPaymentSchema = exports.PaymentMethodEnum = exports.PaymentGatewayEnum = exports.studentFeeSchema = exports.feeStructureSchema = exports.FeeStatusEnum = exports.GradeEnum = exports.expenseSchema = exports.TrancationType = void 0;
+exports.adminSignupInput = exports.studentSchema = exports.staffSchema = exports.Gender = exports.createPaymentSchema = exports.PaymentMethodEnum = exports.PaymentGatewayEnum = exports.studentFeeSchema = exports.feeStructureSchema = exports.FeeStatusEnum = exports.GradeEnum = exports.expenseSchema = exports.TrancationType = void 0;
 const zod_1 = __importDefault(require("zod"));
 exports.TrancationType = zod_1.default.enum(["CREDIT", "DEBIT"]);
 exports.expenseSchema = zod_1.default.object({
@@ -96,4 +96,9 @@ exports.studentSchema = zod_1.default.object({
     rollNumber: zod_1.default.string().min(3).max(10),
     mobileNumber: zod_1.default.string().regex(/^\+\d{10,15}$/),
     bloodGroup: zod_1.default.enum(["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"]),
+});
+exports.adminSignupInput = zod_1.default.object({
+    name: zod_1.default.string().optional(),
+    email: zod_1.default.string(),
+    password: zod_1.default.string(),
 });

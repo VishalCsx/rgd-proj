@@ -1,8 +1,6 @@
 import { Request, Response } from "express";
 import prisma from "../../config/db";
 import { expenseSchema } from "../../zod";
-import { date } from "zod";
-import { stat } from "fs";
 
 export const expenseByCategory = async (
   req: Request,

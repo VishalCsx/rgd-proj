@@ -1,23 +1,15 @@
-import { Route, Routes } from "react-router-dom";
-import SignUp from "./pages/SignUp";
-import SignIn from "./pages/SignIn";
+import { useState } from "react";
 
-import Layout from "./components/Layout"; // Correct import
-import StudentTable from "./components/StudentCard";
-import StudentDetails from "./pages/StudentInfo";
+import "./App.css";
+import SideBar from "./components/SideBar";
 
 function App() {
+  const [count, setCount] = useState(0);
+
   return (
-    <div className="flex flex-row ">
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/getAllStudent" element={<StudentTable />} />
-          <Route path="/student/:rollNumber" element={<StudentDetails />} />
-        </Route>
-      </Routes>
-    </div>
+    <>
+      <SideBar />
+    </>
   );
 }
 
