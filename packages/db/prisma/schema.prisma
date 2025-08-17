@@ -16,7 +16,41 @@ datasource db {
 
 model Student{
   id Int @id @default( autoincrement())
+  adharNumber String @unique
   name String
+  dob DateTime
+  gender  Gender
+  imageUrl String?
+  // contact info 
+  email String? @unique
+  phone String?
+  address String?
+  // Parent/Guardian Info
   fatherName String?
   motherName String?
+
+// Academics Info
+ class Class
+ status String @default("active")
+
+// Relation 
+createdAt DateTime @default(now())
+updatedAt DateTime @updatedAt 
+}
+enum Class{
+I
+II
+III
+IV
+V
+VI
+VII
+VIII
+IX
+X
+}
+enum Gender{
+  Male 
+  Female
+  Others
 }
