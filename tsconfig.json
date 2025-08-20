@@ -1,0 +1,13 @@
+{
+  "extends": "@repo/typescript-config/base.json",
+  "files": [],
+  "include": [],
+  "references": [
+    { "path": "apps/admin-app" },
+    { "path": "apps/student-app" },
+    { "path": "apps/staff-app" },
+    { "path": "packages/ui" },
+    { "path": "packages/db" },
+  
+  ]
+}
